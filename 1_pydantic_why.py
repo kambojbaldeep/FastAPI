@@ -5,6 +5,6 @@ def insert_patient_data(name: str, age: int):
         print(age)
         print("inserted into the database")
     else:
-        print("Invalid data types")
+        raise TypeError("Incorrect data type")
 
-insert_patient_data("Baldeep", "thirty")
+insert_patient_data("Baldeep", 30)
