@@ -1,9 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import List, Dict, Optional
 
 class Patient(BaseModel):
 
     name: str
+    email: EmailStr
     age: int
     weight: float
     married: Optional[bool] = False
@@ -14,6 +15,7 @@ class Patient(BaseModel):
 
 def insert_patient_data(patient: Patient):
     print(patient.name)
+    print(patient.email)
     print(patient.age)
     print(patient.weight)
     print(patient.married)
@@ -21,7 +23,7 @@ def insert_patient_data(patient: Patient):
     print(patient.contact_details)
     print("inserted into the database")
 
-patient_info = {"name": "Baldeep", "age": 30, "weight": 70.5, "married": True, "contact_details": {"email": "baldeep@example.com", "phone": "123-456-7890"}}
+patient_info = {"name": "Baldeep","email": "abc@gmail.com", "age": 30, "weight": 70.5, "married": True, "contact_details": {"phone": "123-456-7890"}}
 
 
 patient1 = Patient(**patient_info)
