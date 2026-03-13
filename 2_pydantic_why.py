@@ -11,7 +11,9 @@ class Patient(BaseModel):
 
     age: int = Field(gt=0, lt=120, description="Age of the patient")
 
-    weight: float = Field(gt=0, lt=200, description="Weight of the patient")
+    # weight: float = Field(gt=0, lt=200, description="Weight of the patient")
+
+    weight: Annotated[float, Field(gt= 0 , strict=True)]
 
     # married: Optional[bool] = False
 
